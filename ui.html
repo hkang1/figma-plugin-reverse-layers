@@ -1,0 +1,49 @@
+<style type="text/css">
+* {
+  font: normal 400 11px/16px Inter,Roboto,sans-serif;
+}
+.error-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+#error-message {
+  padding: 0 2.0rem;
+  margin-bottom: 2.0rem;
+
+  font-size: 1.1rem;
+  color: #333;
+  text-align: center;
+}
+button {
+  height: 3.0rem;
+  padding: 0 1.5rem;
+  border: solid 0.1rem #ccc;
+  border-radius: 0.3rem;
+  background: #fff;
+  cursor: pointer;
+
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 3.0rem;
+}
+button:hover {
+  border-color: #09c;
+  color: #09c;
+}
+</style>
+<div class="error-box">
+  <div id="error-message">Uh-oh</div>
+  <button id="okay">Got it</button>
+</div>
+<script>
+onmessage = event => {
+  const errorMessageBox = document.getElementById('error-message');
+  errorMessageBox.textContent = event.data.pluginMessage;
+};
+document.getElementById('okay').onclick = () => {
+  parent.postMessage({ pluginMessage: 'dismiss' }, '*');
+};
+</script>
