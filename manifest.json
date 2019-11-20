@@ -1,6 +1,10 @@
 {
   "name": "Reverse Layers",
   "id": "778881490330634603",
+  "version": "1.0.0",
+  "author": "Caleb Hoyoul Kang",
+  "github": "https://github.com/hkang1/figma-plugin-reverse-layers",
+  "description": "Figma plugin to allow reversing the order of the selected layers with the same parent layer.",
   "api": "1.0.0",
   "main": "code.js",
   "ui": "ui.html"
